@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Getting Started with Clique</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -46,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Getting Started with Clique</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,16 +57,22 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#intro">Intro</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#setup">Setup</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#basic">Basic App</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#process">Process Data</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#clique">Clique</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#next-steps">More</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -81,322 +88,265 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-lead-in">Visualize Networks and Graphs on the Web</div>
+                <div class="intro-heading">With Resonant Clique!</div>
+                <a href="#intro" class="page-scroll btn btn-xl">Let's Get Started</a>
             </div>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="intro">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Introduction</h2>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
+            <div class="row">
+                <p>This tutorial will help you get started using <a
+                 href="https://github.com/Kitware/clique">Clique</a>, a
+                 component of the <a href="http://resonant.kitware.com">Resonant</a>
+                 data analysis and visualization platform that allows you to explore
+                 and visualize large graphs and networks interactively in your
+                 browser.</p>
+
+                <p>In this tutorial, we will visualize a subset of the Facebook
+                friendship graph, allowing us to start to explore the social
+                dynamics via connectivity in this graph.  To create this
+                interactive visualization, we will develop a minimalistic web
+                application that uses Clique to manage importation of graph data
+                from a database, d3 and WebCola to render the graph in a
+                familiar, interactive fasion on screen, and standard HTML and
+                JavaScript to create an example of UI control.  By the end of
+                this tutorial, you should have a basic grasp of how to construct
+                an application with Clique, and hopefully some ideas of where to
+                go next.</p>
+
+                <p>Let's get started!</p>
+
+                <p><a href="#setup" class="page-scroll"><i>(next section)</i></a></p>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
+    <section id="setup" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Set Up an Environment and Get Some Data</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
+            <div>
+
+                <p>We will be constructing a web application piece by piece, so
+                we'll need a clean environment in which to work.  Create a new
+                directory somewhere, and move into it.  The first thing we will
+                do is download a graph of anonymized Facebook users and their
+                friendship network.  <a
+                        href="http://romanesco.readthedocs.org/en/latest/_static/facebook-sample-data.txt">facebook-sample-data.txt</a>
+                is a simple, tab-separated data file containing rows of two
+                numbers:  an ID for a user, and an ID for another user found in
+                the first user's friend list.  Download this file so it's
+                available for use by the web application.</p>
+
+                <p>Now let's create a basic infrastructure for a web application.</p>
+
+                <p><a href="#basic" class="page-scroll"><i>(next section)</i></a></p>
+
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="basic">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">A Basic Web Application</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div>
+
+                <p>Our web application will consist of two parts:  an HTML file
+                to structure the page, and a JavaScript file to drive its
+                contents - including a visualization of the graph.</p>
+
+                <p>The HTML file is very simple - it includes some basic
+                JavaScript libraries such as JQuery and D3, the libraries for
+                Clique, and a single, full size SVG element where we will place
+                our graph:</p>
+
+                <script src="https://gist.github.com/ronichoudhury/781904790bbb49eb10b8.js"></script>
+
+                <p>We will start with a basic JavaScript file to kick things off:</p>
+
+                <script src="https://gist.github.com/ronichoudhury/d38e1c54fe0a159bc4ae.js"></script>
+
+                <p>The last step in setting up this application is to install a
+                couple of dependencies using Bower.  Issue this command:
+                <tt>bower install webcola
+                    'clique#ea88e5a2c7854adeae26a6c13a5a52755177c434'</tt> to
+                get WebCola and the correct version of the Clique libraries.</p>
+
+                <p>You can serve this application using a command like
+                <tt>python -m SimpleHTTP 8000</tt>; this will cause the
+                application to appear on port 8000 of your computer, where you
+                can view it by visiting <a
+                    href="http://localhost:8000">http://localhost:8000</a>.  If
+                you open the developer console, you should see the data file
+                printed out on the console.</p>
+
+                <p>Now that we have a basic, working web application, we can
+                process the raw data into a suitable form.</p>
+
+                <p><a href="#process" class="page-scroll"><i>(next section)</i></a></p>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="process" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Process the Data</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
+            <div>
+
+                <p>We need to parse the tab-separated values in the file,
+                interpret the numbers as nodes in a graph, and interpret the
+                lines of data as links in the graph.  To do this, we will make
+                use of D3's TSV parsing functions.  The call to
+                <tt>d3.text()</tt> (lines 4-6 above) will be replaced by the
+                following code:</p>
+
+                <script src="https://gist.github.com/ronichoudhury/56c0185ebd1496bb301b.js"></script>
+
+                <p>The call to <tt>d3.tsv.parseRows()</tt> (line 4 ff.) splits the
+                raw data into an array of arrays containing the tab-separated
+                field values from each line, then applies the function specified
+                to each row.  Our function simply converts the strings into
+                numbers, preserving the array structure.</p>
+
+                <p>After that, we create a list of nodes and links to be passed
+                to the Graph model in the next step.  This is an object with two
+                fields, <tt>nodes</tt> and <tt>links</tt>.  <tt>nodes</tt>
+                contains a list of objects encoding nodes with metadata.  In
+                this case, we are installing the numeric identifier of each node
+                in the data file as its "id" metadata field.  <tt>links</tt>
+                contains a list of objects with "source" and "target" fields,
+                which reference entries in the <tt>nodes</tt> list by index.</p>
+
+                <p>This structure is known as a "node link list", and will be
+                used in the next step to construct a Graph model.</p>
+
+                <p><a href="#clique" class="page-scroll"><i>(next section)</i></a></p>
             </div>
         </div>
     </section>
 
-    <!-- Clients Aside -->
-    <aside class="clients">
+    <section id="clique">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Create a Clique View and Interact with the Graph</h2>
                 </div>
             </div>
+            <div>
+
+                <p>Once more, replace the call to <tt>d3.text()</tt> with the following:</p>
+
+                <script src="https://gist.github.com/ronichoudhury/b9880cea346a5345391c.js"></script>
+
+                <p>This contains many more components, but don't worry - we'll go over them one by one.</p>
+
+                <p>First, line 44 creates an <i>adapter</i> - an object that
+                takes data in some form and shapes it into the form needed by
+                the <i>Graph model</i>, which is created in line 47.  Together,
+                these two objects work to provide information about the graph to
+                other components of the application.</p>
+
+                <p>The most important such component is the <i>view</i>, created
+                in line 53.  Note the <i>el</i> (element) property on line 55;
+                this specifies where the view should be inserted in the web
+                page.  In our case <i>"#graph"</i> is a CSS selector that
+                references the SVG element in our HTML file.</p>
+
+                <p>Note also the <i>fill</i> option property (line 56), which
+                uses a Category-10 colormap supplied by D3 to color code the
+                nodes by the identity of the last digit of their IDs.  By
+                modifiying this function, you can colormap by other data
+                qualities that matter more to your particular application.</p>
+
+                <p>The remainder of the function specifies a few things for
+                convenience.  For now, the important ones are in lines 76 and
+                88, respectively.</p>
+
+                <p>The <i>addNode()</i> function takes in an integer argument
+                and asks the graph adapter to find a node with that ID, and add
+                it (if it exists) to the graph view.  Try it out right now -
+                open the developer console, and type in <tt>addNode(1)</tt> and
+                hit enter.  You should see a single node appear.</p>
+
+                <p>Line 61 uses the view's built-in <i>selection</i> model to
+                enable the application to react to nodes and links being clicked
+                on.  In this case, the application will print out a node's ID on
+                the console whenever it is selected via click.  You can verify
+                the identity of the new node you have just added by clicking
+                once on the node.</p>
+
+                <p>Next, if you want to see the neighbors of this node, you can
+                use the <i>expandNode()</i> function (line 88) to bring in its
+                neighbors.  <i>expandNode()</i>, like <i>addNode()</i>, takes
+                the ID of a node that has already been added, and updates the
+                graph appropriately.  Try it now - type <tt>expandNode(1)</tt>
+                and hit enter.</p>
+
+                <p>You can imagine that it may become burdensome to flip back
+                and forth between the view and the console, typing out
+                repetitive commands, just to explore the graph.  Line 67 solves
+                this problem by attaching an action to the double click event on
+                nodes.  This line states that whenever the view renders, we want
+                to attach a double click event on each node, which simply
+                automates the call to <i>expandNode()</i> that we just
+                experimented with manually.  The callback operates on a D3
+                selection, and thus takes a parameter <i>d</i> representing the
+                data carried by the node, including its ID.  Now, whenever a
+                node is double clicked, it will expand exactly as though you had
+                expanded it by name using the manual function in the developer
+                console.</p>
+
+                <p>This is meant to demonstrate how your application can respond
+                to UI events such as clicks, double clicks, drags, etc.  Another
+                approach would be to create standard UI elements in the
+                application, and attach such actions to those instead.</p>
+
+                <p>At this point, you can click around, explore the graph, and
+                begin to understand the structure of the Facebook friendships it
+                represents.</p>
+
+                <p><a href="#next-steps" class="page-scroll"><i>(next section)</i></a></p>
+            </div>
         </div>
-    </aside>
-    
+    </section>
+
+    <section id="next-steps">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Where to Go from Here</h2>
+                </div>
+            </div>
+            <div>
+
+                <p>This has been just a peek at some of the cool things you can do with Clique.  For more examples, see <a href="">Clique on GitHub</a>, or contact us etc etc.
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -446,18 +396,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                    <span class="copyright">Copyright &copy; Kitware, Inc. 2015</span>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li><a href="#">Privacy Policy</a>

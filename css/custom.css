@@ -1,0 +1,16 @@
+.intro-text {
+    color: black;
+}
+
+a {
+    color: #337ab7;
+}
+
+a.page-scroll {
+    color: gray !important;
+}
+
+tt {
+    background-color: lightgray;
+    color: red;
+}
