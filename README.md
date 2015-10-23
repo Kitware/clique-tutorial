@@ -16,7 +16,7 @@ containing a sample Facebook network.
 **Install the front-end dependencies.** Run the following command:
 
 ````
-bower install webcola 'clique#ea88e5a2c7854adeae26a6c13a5a52755177c434'
+bower install webcola 'clique#40f2c1bf31d6b15374498420b41d38e97354a688'
 ````
 (The quotes are needed in order to escape the hash symbol.)
 
