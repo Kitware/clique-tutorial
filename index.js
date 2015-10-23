@@ -7,6 +7,7 @@ window.onload = function () {
             nodeTable,
             adapter,
             graph,
+            cmap,
             view;
 
         console.log("Loading data...");
@@ -28,9 +29,7 @@ window.onload = function () {
                 if (!_.has(nodeTable, node)) {
                     nodeTable[node] = _.size(nll.nodes);
                     nll.nodes.push({
-                        data: {
-                            id: node
-                        }
+                        id: node
                     });
                 }
             });
@@ -38,6 +37,7 @@ window.onload = function () {
             nll.links.push({
                 source: nodeTable[row[0]],
                 target: nodeTable[row[1]],
+                undirected: true,
                 data: {}
             });
         });
@@ -52,9 +52,54 @@ window.onload = function () {
         });
 
         // Create a view to visualize the graph.
-        view = new clique.view.Cola({
+        cmap = d3.scale.category10();
+        window.view = view = new clique.view.Cola({
             model: graph,
-            el: "#graph"
+            el: "#graph",
+            fill: function (d) {
+                return cmap(_.last(d.key));
+            }
         });
+
+        view.selection.on("focused", function (focused) {
+            if (!_.isUndefined(focused)) {
+                console.log(focused.slice(5));
+            }
+        });
+
+        view.once("render", function () {
+            view.nodes.on("dblclick", function (d) {
+                expandNode(_.last(d.key));
+            });
+        });
+
+        // Some functions to drive the visualization from the console.
+        //
+        // Add a node to the graph by id number.
+        window.addNode = function (i) {
+            adapter.findNodeByKey("node_" + i).then(function (node) {
+                if (!node) {
+                    console.warn("No such node with id " + i);
+                    return;
+                }
+
+                return graph.addNode(node);
+            });
+        };
+
+        // Expand a node already in the graph.
+        window.expandNode = function (i) {
+            var key = "node_" + i;
+            if (!_.has(graph.nodes, key)) {
+                console.warn("No such node with id " + i + " in graph");
+                return;
+            }
+
+            return graph.addNeighborhood({
+                center: graph.adapter.getAccessor(key),
+                radius: 1
+            });
+        };
+
     });
 };
