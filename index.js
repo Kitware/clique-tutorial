@@ -1,14 +1,15 @@
 window.onload = function () {
     "use strict";
 
-    d3.text("facebook-links.txt", function (text) {
+    d3.text("facebook-sample-data.txt", function (text) {
         var data,
             nll,
             nodeTable,
             adapter,
             graph,
             cmap,
-            view;
+            view,
+            oldNodeEnter;
 
         console.log("Loading data...");
         data = d3.tsv.parseRows(text, function (row) {
@@ -63,23 +64,26 @@ window.onload = function () {
 
         view.selection.on("focused", function (focused) {
             if (!_.isUndefined(focused)) {
-                console.log(focused.slice(5));
+                console.log(focused);
             }
         });
 
-        view.once("render", function () {
-            view.nodes.on("dblclick", function (d) {
-                expandNode(_.last(d.key));
+        oldNodeEnter = view.nodeEnter;
+        view.nodeEnter = _.bind(function (enter) {
+            oldNodeEnter(enter);
+            this.nodes.on("dblclick", function (d) {
+                expandNode(d.key);
             });
-        });
+
+        }, view);
 
         // Some functions to drive the visualization from the console.
         //
         // Add a node to the graph by id number.
-        window.addNode = function (i) {
-            adapter.findNodeByKey("node_" + i).then(function (node) {
+        window.addNode = function (key) {
+            adapter.findNodeByKey(key).then(function (node) {
                 if (!node) {
-                    console.warn("No such node with id " + i);
+                    console.warn("No such node with id " + key);
                     return;
                 }
 
@@ -88,10 +92,9 @@ window.onload = function () {
         };
 
         // Expand a node already in the graph.
-        window.expandNode = function (i) {
-            var key = "node_" + i;
+        window.expandNode = function (key) {
             if (!_.has(graph.nodes, key)) {
-                console.warn("No such node with id " + i + " in graph");
+                console.warn("No such node with id " + key + " in graph");
                 return;
             }
 
@@ -101,5 +104,6 @@ window.onload = function () {
             });
         };
 
+        window.addNode("node_1");
     });
 };
