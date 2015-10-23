@@ -3,6 +3,12 @@ A simple tutorial to get you started with Clique
 
 ## Building the Tutorial Application
 
+**Clone the repository.**  You will need to clone this repository to start:
+````
+git clone https://github.com/Kitware/clique-tutorial
+cd clique-tutorial
+````
+
 **Get the data.** Download [this
    file](http://romanesco.readthedocs.org/en/latest/\_static/facebook-sample-data.txt),
 containing a sample Facebook network.
