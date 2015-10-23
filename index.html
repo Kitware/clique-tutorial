@@ -257,35 +257,38 @@
 
                 <p>This contains many more components, but don't worry - we'll go over them one by one.</p>
 
-                <p>First, line 44 creates an <i>adapter</i> - an object that
+                <p>First, line 45 creates an <i>adapter</i> - an object that
                 takes data in some form and shapes it into the form needed by
-                the <i>Graph model</i>, which is created in line 47.  Together,
+                the <i>Graph model</i>, which is created in line 48.  Together,
                 these two objects work to provide information about the graph to
                 other components of the application.</p>
 
                 <p>The most important such component is the <i>view</i>, created
-                in line 53.  Note the <i>el</i> (element) property on line 55;
+                in line 54.  Note the <i>el</i> (element) property on line 56;
                 this specifies where the view should be inserted in the web
                 page.  In our case <i>"#graph"</i> is a CSS selector that
                 references the SVG element in our HTML file.</p>
 
-                <p>Note also the <i>fill</i> option property (line 56), which
+                <p>Note also the <i>fill</i> option property (line 57), which
                 uses a Category-10 colormap supplied by D3 to color code the
                 nodes by the identity of the last digit of their IDs.  By
                 modifiying this function, you can colormap by other data
                 qualities that matter more to your particular application.</p>
 
                 <p>The remainder of the function specifies a few things for
-                convenience.  For now, the important ones are in lines 76 and
-                88, respectively.</p>
+                convenience.  For now, the important ones are in lines 79 and
+                91, respectively.</p>
 
                 <p>The <i>addNode()</i> function takes in an integer argument
                 and asks the graph adapter to find a node with that ID, and add
                 it (if it exists) to the graph view.  Try it out right now -
-                open the developer console, and type in <tt>addNode(1)</tt> and
-                hit enter.  You should see a single node appear.</p>
+                open the developer console, and type in
+                <tt>addNode("node_8")</tt> and hit enter.  You should see a new
+                node appear, along with its link to node 1 (which was
+                "pre-loaded" into the application via an invocation of
+                <i>addNode</i>).</p>
 
-                <p>Line 61 uses the view's built-in <i>selection</i> model to
+                <p>Line 62 uses the view's built-in <i>selection</i> model to
                 enable the application to react to nodes and links being clicked
                 on.  In this case, the application will print out a node's ID on
                 the console whenever it is selected via click.  You can verify
@@ -293,19 +296,21 @@
                 once on the node.</p>
 
                 <p>Next, if you want to see the neighbors of this node, you can
-                use the <i>expandNode()</i> function (line 88) to bring in its
+                use the <i>expandNode()</i> function (line 91) to bring in its
                 neighbors.  <i>expandNode()</i>, like <i>addNode()</i>, takes
                 the ID of a node that has already been added, and updates the
-                graph appropriately.  Try it now - type <tt>expandNode(1)</tt>
-                and hit enter.</p>
+                graph appropriately.  Try it now - type
+                <tt>expandNode("node_1")</tt> and hit enter.</p>
 
                 <p>You can imagine that it may become burdensome to flip back
                 and forth between the view and the console, typing out
-                repetitive commands, just to explore the graph.  Line 67 solves
-                this problem by attaching an action to the double click event on
-                nodes.  This line states that whenever the view renders, we want
-                to attach a double click event on each node, which simply
-                automates the call to <i>expandNode()</i> that we just
+                repetitive commands, just to explore the graph.  Lines 68-74
+                solve this problem by attaching an action to the double click
+                event on nodes.  The code works by first saving the current
+                action taken by the view when new nodes are rendered, then
+                replacing that action by one that invokes the old action, then
+                additionally attaches a double click event on each node, which
+                simply automates the call to <i>expandNode()</i> that we just
                 experimented with manually.  The callback operates on a D3
                 selection, and thus takes a parameter <i>d</i> representing the
                 data carried by the node, including its ID.  Now, whenever a
