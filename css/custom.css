@@ -1,3 +1,7 @@
 .intro-text {
     color: black;
 }
+
+a.page-scroll {
+    color: gray !important;
+}
