@@ -74,7 +74,6 @@ window.onload = function () {
             this.nodes.on("dblclick", function (d) {
                 expandNode(d.key);
             });
-
         }, view);
 
         // Some functions to drive the visualization from the console.
